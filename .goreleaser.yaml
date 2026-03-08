@@ -16,10 +16,10 @@ builds:
       - arm64
 
 archives:
-  - format: tar.gz
+  - formats: [tar.gz]
     format_overrides:
       - goos: windows
-        format: zip
+        formats: [zip]
 
 checksum:
   name_template: "checksums.txt"
@@ -30,3 +30,18 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+
+homebrew_casks:
+  - name: claude-skills
+    binaries:
+      - claude-skills
+    homepage: "https://github.com/GoCodeAlone/claude-skills"
+    description: "Install Claude Code skill files into workspaces"
+    repository:
+      owner: GoCodeAlone
+      name: homebrew-tap
+      branch: main
+      token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
