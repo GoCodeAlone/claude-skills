@@ -31,12 +31,11 @@ changelog:
       - "^docs:"
       - "^test:"
 
-homebrew_casks:
+brews:
   - name: claude-skills
-    binaries:
-      - claude-skills
     homepage: "https://github.com/GoCodeAlone/claude-skills"
     description: "Install Claude Code skill files into workspaces"
+    license: "MIT"
     repository:
       owner: GoCodeAlone
       name: homebrew-tap
@@ -45,3 +44,5 @@ homebrew_casks:
     commit_author:
       name: goreleaserbot
       email: bot@goreleaser.com
+    install: |
+      bin.install "claude-skills"
